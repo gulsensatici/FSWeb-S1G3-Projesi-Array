@@ -42,6 +42,8 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
 
 function kopyala(/*kod buraya*/){
   /*kod buraya*/
+  let yeniTat= [...orijinalTatlar];
+  return yeniTat
 }
 
 
@@ -58,6 +60,11 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 
 function dizi25Cesitmi(/*kod buraya*/){
   /*kod buraya*/
+  if(orijinalTatlar.length=== 25 ){
+    return true;
+  }else{
+    return false;
+  }
 }
 
 
@@ -76,6 +83,10 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
 
 function cesitEkle(/*kod buraya*/){
   /*kod buraya*/
+  let yeniTat= [...orijinalTatlar];
+  yeniTat.unshift("Kakule");
+  return yeniTat;
+
 }
 
 
@@ -93,6 +104,9 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
 
 
 function sonCesitiKaldir(/*kod buraya*/){
+  let yeniTat= [...orijinalTatlar];
+  yeniTat.pop();
+  return yeniTat;
   /*kod buraya*/
 }
 
@@ -108,7 +122,8 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(/*kod buraya*/){
+function indekstekiCesitiGetir(/*kod buraya*/tatlarDizisi, sira){
+  return tatlarDizisi[sira]
   /*kod buraya*/
 }
 
@@ -128,8 +143,15 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(/*kod buraya*/){
+function ismeGoreCesitCikar(/*kod buraya*/tatlar,lezzet){
+  let cıkacakTat = tatlar.indexOf(lezzet);
+  tatlar.splice(cıkacakTat,1);
+  return tatlar;
+
+  
   /*kod buraya*/
+
+ 
 }
 
 
@@ -154,10 +176,21 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
 */
 
 
-function ismeGoreFiltrele(/*kod buraya*/){
+function ismeGoreFiltrele(/*kod buraya*/tatlar, lezzet){
+  let yeniTat=[];
+  for(let i=0; i<tatlar.length; i++){
+    let eldekiMalzeme=tatlar[i];
+    if(eldekiMalzeme.includes(lezzet)){
+      yeniTat.push(eldekiMalzeme);
+    }
+  }
+  console.log("yeniTat", yeniTat);
+  return yeniTat;
   /*kod buraya*/
+  
 }
 
+ismeGoreFiltrele(orijinalTatlar, "Çikolata");
 
 
 /* ALIŞTIRMA */
@@ -174,6 +207,7 @@ Aşağıdakileri yapmak için ortalamaKelimeSayisi işlevini kullanın:
 
 function ortalamaKelimeSayisi(/*kod buraya*/){
   /*kod buraya*/
+
 }
 
 
